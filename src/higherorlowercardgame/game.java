@@ -99,8 +99,17 @@ public final class game extends javax.swing.JFrame {
     public void startGame(){
         score = 0;
         lives = 5;
-        
+        higherButton.setVisible(true);
+        lowerButton.setVisible(true);
         card = rand.nextInt(13)+1;
+        livesLabel.setVisible(true);
+        scoreLabel.setVisible(true);
+        continueButton.setVisible(true);
+        scoreLabel.setText("Score: "+score);
+        livesLabel.setText("Lives: "+lives);
+        yesButton.setVisible(false);
+        noButton.setVisible(false);
+        playAgainLabel.setVisible(false);
         
         if(card == 1){
             cardImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/higherorlowercardgame/AC.png")));
@@ -201,10 +210,10 @@ public final class game extends javax.swing.JFrame {
         yesButton.setVisible(true);
         noButton.setVisible(true);
         playAgainLabel.setVisible(true);
-        userField.setText("");
         continueButton.setVisible(false);
         livesLabel.setVisible(false);
         scoreLabel.setVisible(false);
+        
         
     }
     public void userDetails(){
@@ -503,15 +512,8 @@ public final class game extends javax.swing.JFrame {
     }//GEN-LAST:event_noButtonActionPerformed
 
     private void yesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesButtonActionPerformed
+        startGame();
         
-        game game = new game();
-        
-        Toolkit tk = Toolkit.getDefaultToolkit();
-        int xSize = (int)tk.getScreenSize().getWidth();
-        int ySize = (int)tk.getScreenSize().getHeight();
-        game.setSize(xSize,ySize);
-        game.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_yesButtonActionPerformed
 
     /**
